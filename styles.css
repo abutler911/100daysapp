@@ -1,10 +1,9 @@
-/* Import Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f4f4f4; /* Light grey background */
-  color: #333; /* Dark grey text */
+  background-color: #f4f4f4;
+  color: #333;
   margin: 0;
   padding: 20px;
 }
@@ -13,7 +12,7 @@ h1 {
   margin: 0;
   font-size: 36px;
   font-weight: 600;
-  color: #4caf50; /* A nice green */
+  color: #4caf50;
 }
 
 p {
@@ -37,24 +36,63 @@ p {
 }
 
 .day {
-  background-color: #ffffff; /* White background for each day */
-  border: 1px solid #ddd; /* Light grey border */
-  border-radius: 10px; /* Rounded corners */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   padding: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: all 0.3s ease; /* Smooth transition for hover effect */
-  cursor: pointer; /* Indicate clickable */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
   transition: background-color 0.3s;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  transform: scale(1);
 }
 
 .day:hover {
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
 
-.day-checkbox {
-  accent-color: #4caf50; /* A nice green for the checkbox */
-}
+/* .day-checkbox {
+  accent-color: #4caf50; 
+} */
 
 .day.completed {
-  background-color: #4caf50; /* Green background for completed days */
+  background-color: #4caf50;
+  animation: pop 0.3s;
+}
+
+#total-amount {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .days-container {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
 }

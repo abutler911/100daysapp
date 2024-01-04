@@ -5,10 +5,19 @@ document.addEventListener("DOMContentLoaded", function () {
   currentDateElement.textContent = today;
   const daysContainer = document.querySelector(".days-container");
   let savedDays = JSON.parse(localStorage.getItem("completedDays")) || [];
-
+  // Function to calculate and update the total amount
+  const updateTotal = () => {
+    const totalAmount = savedDays.reduce(
+      (total, dayIndex) => total + (dayIndex + 1),
+      0
+    );
+    document.getElementById(
+      "total-amount"
+    ).textContent = `Total Saved: $${totalAmount}`;
+  };
   // Function to toggle day state
   const toggleDay = (day) => {
-    const dayIndex = parseInt(day.textContent) - 1;
+    const dayIndex = parseInt(day.textContent.substring(1)) - 1;
     if (savedDays.includes(dayIndex)) {
       // Remove day from saved days if it's already there
       savedDays = savedDays.filter((d) => d !== dayIndex);
@@ -19,13 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
       day.classList.add("completed");
     }
     localStorage.setItem("completedDays", JSON.stringify(savedDays));
+    updateTotal();
   };
 
   // Initial render of days
   for (let i = 1; i <= 100; i++) {
     const day = document.createElement("div");
     day.classList.add("day");
-    day.textContent = i;
+    day.textContent = `$${i}`;
     day.addEventListener("click", () => toggleDay(day));
     daysContainer.appendChild(day);
 
@@ -34,4 +44,5 @@ document.addEventListener("DOMContentLoaded", function () {
       day.classList.add("completed");
     }
   }
+  updateTotal();
 });
