@@ -1,15 +1,22 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const checkboxes = document.querySelectorAll(".day-checkbox");
-  let savedData = JSON.parse(localStorage.getItem("100DaysChallenge")) || [];
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".days-container");
 
-  // Load saved progress
-  checkboxes.forEach((checkbox, index) => {
-    checkbox.checked = savedData[index] || false;
-    checkbox.addEventListener("change", () => saveProgress());
-  });
+  for (let i = 1; i <= 100; i++) {
+    const dayDiv = document.createElement("div");
+    dayDiv.className = "day";
 
-  function saveProgress() {
-    savedData = Array.from(checkboxes).map((checkbox) => checkbox.checked);
-    localStorage.setItem("100DaysChallenge", JSON.stringify(savedData));
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = `day${i}`;
+    checkbox.className = "day-checkbox";
+
+    const label = document.createElement("label");
+    label.htmlFor = `day${i}`;
+    label.textContent = `Day ${i}`;
+
+    dayDiv.appendChild(checkbox);
+    dayDiv.appendChild(label);
+
+    container.appendChild(dayDiv);
   }
 });
