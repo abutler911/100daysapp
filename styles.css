@@ -38,6 +38,19 @@ p {
   font-size: 18px;
   color: #666;
 }
+
+#current-challenge-day {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
 .days-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
