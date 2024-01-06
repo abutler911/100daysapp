@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>100 Days of Saving</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
-    <header>
-      <h1>100 Days Saving Challenge</h1>
-      <p>Track your progress with the 100 Days Saving Challenge!</p>
-      <div id="total-amount">Total Saved: $0</div>
+    <div class="container">
+      <header>
+        <h1>100 Days Saving Challenge</h1>
+        <p>Track your progress with the 100 Days Saving Challenge!</p>
+        <div id="challenge-status">
+          <div id="current-challenge-day">Current Challenge Day: --</div>
+          <div id="reminder-message" class="reminder"></div>
+        </div>
+        <div id="total-amount">Total Saved: $0</div>
 
-      <div id="current-date"></div>
-    </header>
-    <hr />
-    <main>
-      <section id="saving-challenge">
-        <div class="days-container"></div>
-      </section>
-    </main>
-    <footer></footer>
+        <div id="current-date"></div>
+      </header>
+      <hr />
+      <main>
+        <section id="saving-challenge">
+          <div class="days-container"></div>
+        </section>
+      </main>
+    </div>
     <script type="module" src="main.js"></script>
   </body>
 </html>
