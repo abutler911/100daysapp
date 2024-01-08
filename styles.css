@@ -18,7 +18,7 @@ h1 {
 p {
   text-align: center;
   margin: 0;
-  font-size: 18px;
+  font-size: 12px;
   color: #999;
 }
 
@@ -35,19 +35,19 @@ p {
 #current-date {
   text-align: center;
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 12px;
   color: #666;
 }
 
 #current-challenge-day {
   text-align: center;
-  margin-top: 10px;
-  font-size: 18px;
+  margin-top: 5px;
+  font-size: 14px;
   font-weight: 600;
   color: #333;
   background-color: #4caf50;
   color: #fff;
-  padding: 10px;
+  padding: 2px;
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -63,6 +63,22 @@ p {
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 15px;
   padding: 10px;
+}
+
+#progress-bar-container {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 5px;
+  margin: 10px 0;
+  border: 0.5px solid gray;
+}
+
+#progress-bar {
+  width: 0%;
+  height: 10px;
+  background-color: #cc00ff;
+  /* border-radius: 5px; */
+  transition: width 0.5s ease-in-out;
 }
 
 .day {
@@ -94,13 +110,13 @@ p {
 
 #total-amount {
   text-align: center;
-  margin-top: 20px;
-  font-size: 24px;
+  margin-top: 10px;
+  font-size: 16px;
   font-weight: 600;
   color: #333;
   background-color: #4caf50;
   color: #fff;
-  padding: 10px;
+  padding: 2px;
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }

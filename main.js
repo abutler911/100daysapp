@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "total-amount"
     ).textContent = `Total Saved: $${totalAmount}`;
 
+    const progressPercent = (savedDays.length / 100) * 100;
+    document.getElementById("progress-bar").style.width = progressPercent + "%";
     if (savedDays.length < currentChallengeDay) {
       document.getElementById("reminder-message").textContent =
         "You're behind schedule. Let's catch up!";
