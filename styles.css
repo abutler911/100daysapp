@@ -114,7 +114,14 @@ p {
 
 .day.completed {
   background-color: #4caf50;
-  animation: pop 0.3s;
+  background-image: linear-gradient(
+    to right,
+    #4caf50 0%,
+    #66cc5a 50%,
+    #4caf50 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 5s infinite linear;
 }
 
 #total-amount {
@@ -139,6 +146,16 @@ p {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
   }
 }
 
