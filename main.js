@@ -26,6 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const progressPercent = (savedDays.length / 100) * 100;
     document.getElementById("progress-bar").style.width = progressPercent + "%";
+
+    const progressPercentageSpan = document.getElementById(
+      "progress-percentage"
+    );
+    progressPercentageSpan.textContent = progressPercent.toFixed(0) + "%";
+
     if (savedDays.length < currentChallengeDay) {
       document.getElementById("reminder-message").textContent =
         "You're behind schedule. Let's catch up!";
