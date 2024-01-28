@@ -67,7 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
   updateTotal();
 });
 
-var category = "money";
+var category = "inspirational";
+
 $.ajax({
   method: "GET",
   url: "https://api.api-ninjas.com/v1/quotes?category=" + category,
@@ -78,7 +79,10 @@ $.ajax({
     if (result && result.length > 0) {
       var randomIndex = Math.floor(Math.random() * result.length);
       var randomQuote = result[randomIndex].quote;
+      var author = result[0].author;
+
       $("#financial-quote").text(randomQuote);
+      $("#author").text(`- ${author}` || "Unknown");
     } else {
       console.error("No quotes found for the specified category.");
     }
