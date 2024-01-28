@@ -1,9 +1,9 @@
 /* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 /* Global Styles */
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #000000;
   color: #000000;
   margin: 0;
@@ -41,7 +41,7 @@ p {
 }
 
 .image-left {
-  flex: 0 0 100px; /* Fixed width for the images */
+  flex: 0 0 100px;
 }
 
 .image-left img {
@@ -51,12 +51,12 @@ p {
 }
 
 .title {
-  flex-grow: 1; /* Allow the title to grow and take remaining space */
+  flex-grow: 1;
   text-align: center;
 }
 
 .container {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   max-width: 600px;
   padding: 10px;
@@ -153,15 +153,43 @@ p {
 }
 
 .day.completed {
+  position: relative;
+  overflow: hidden;
   background-color: #4caf50;
   background-image: linear-gradient(
     to right,
     #4caf50 0%,
-    #66cc5a 50%,
+    #79ca70 50%,
     #4caf50 100%
   );
   background-size: 200% 100%;
   animation: shimmer 5s infinite linear;
+}
+
+.day.completed::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  animation: sparkle 3s linear infinite;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 0;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.heart {
+  color: red;
 }
 
 /* Keyframe Animations */
@@ -184,6 +212,18 @@ p {
   }
   50% {
     background-position: 100% 0;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    border-color: rgba(255, 255, 255, 0);
+  }
+  50% {
+    border-color: rgba(52, 121, 55, 0.8);
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0);
   }
 }
 
