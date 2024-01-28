@@ -76,6 +76,12 @@ p {
   border-radius: 10px;
 }
 
+#financial-quote {
+  text-align: justify;
+  margin-top: 10px;
+  font-size: 0.6rem;
+  color: rgb(114, 114, 114);
+}
 #current-challenge-day {
   font-size: 1rem;
   font-weight: 600;

@@ -66,3 +66,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   updateTotal();
 });
+
+var category = "money";
+$.ajax({
+  method: "GET",
+  url: "https://api.api-ninjas.com/v1/quotes?category=" + category,
+  headers: { "X-Api-Key": "BdOaubTPAZ3OWYfGl+qh5Q==d4D3ZAfZchLj38QH" },
+  contentType: "application/json",
+  success: function (result) {
+    console.log(result);
+    if (result && result.length > 0) {
+      var randomIndex = Math.floor(Math.random() * result.length);
+      var randomQuote = result[randomIndex].quote;
+      $("#financial-quote").text(randomQuote);
+    } else {
+      console.error("No quotes found for the specified category.");
+    }
+  },
+  error: function ajaxError(jqXHR) {
+    console.error("Error: ", jqXHR.responseText);
+  },
+});
