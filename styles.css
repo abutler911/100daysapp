@@ -264,7 +264,9 @@ input:checked + .slider:before {
   border: 1px solid #c5c5c5;
   background-color: #000000;
 }
-
+.dark-mode #reminder-message {
+  color: #fff;
+}
 .dark-mode footer {
   background-color: #222;
   color: #fff;
