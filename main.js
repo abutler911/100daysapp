@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     document.getElementById(
       "total-amount"
-    ).textContent = `Total Saved: $${totalAmount}`;
+    ).textContent = `Total Saved: $${totalAmount} out of $5050`;
 
     const progressPercent = (savedDays.length / 100) * 100;
     document.getElementById("progress-bar").style.width = progressPercent + "%";
