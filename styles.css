@@ -283,6 +283,13 @@ input:checked + .slider:before {
   vertical-align: middle;
 }
 
+.day.last-selected {
+  border: 3px solid #7d3c98;
+  background-color: #ffcccc;
+  color: #7d3c98;
+  font-weight: 700;
+}
+
 /* Keyframe Animations */
 @keyframes pop {
   0% {

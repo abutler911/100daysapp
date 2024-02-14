@@ -40,6 +40,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  let lastSelectedDay =
+    parseInt(localStorage.getItem("lastSelectedDay")) || null;
+
+  const updateUIForLastSelectedDay = () => {
+    document.querySelectorAll(".day").forEach((dayElement) => {
+      dayElement.classList.remove("last-selected");
+    });
+    if (lastSelectedDay !== null) {
+      const lastDayElement = document.querySelector(
+        `.day:nth-child(${lastSelectedDay + 1})`
+      );
+      if (lastDayElement) {
+        lastDayElement.classList.add("last-selected");
+      }
+    }
+  };
+
   const toggleDay = (day) => {
     const dayIndex = parseInt(day.textContent.substring(1)) - 1;
     if (savedDays.includes(dayIndex)) {
@@ -50,7 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
       day.classList.add("completed");
     }
     localStorage.setItem("completedDays", JSON.stringify(savedDays));
+    lastSelectedDay = dayIndex;
+    localStorage.setItem("lastSelectedDay", lastSelectedDay.toString());
     updateTotal();
+    updateUIForLastSelectedDay();
   };
 
   for (let i = 1; i <= 100; i++) {
@@ -65,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   updateTotal();
+  updateUIForLastSelectedDay();
 });
 
 var category = "inspirational";
